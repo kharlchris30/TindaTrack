@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="auth.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Logo styling same as others */
+        .logo-title-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: flex-start;
+            padding-bottom: 20px;
+        }
+        .logo-title-container .logo {
+            max-width: 120px;
+            height: auto;
+            margin: 0;
+        }
+        .logo-title-container .title-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0;
+        }
+        .logo-title-container .title-text h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            line-height: 1.1;
+            border-bottom: none !important;
+        }
+        .logo-title-container .title-text .tinda {
+            color: #ffffff;
+        }
+        .logo-title-container .title-text .track {
+            color: #28a745;
+        }
+        .logo-title-container .title-text .slogan {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-top: 2px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo and Title -->
+        <div class="logo-title-container">
+            <img src="tindatrack-logo.png" alt="TindaTrack Logo" class="logo">
+            <div class="title-text">
+                <h1><span class="tinda">Tinda</span><span class="track">Track</span></h1>
+                <p class="slogan">Tinda mo, Track mo!</p>
+            </div>
+        </div>
+
+        <h3>Edit</h3>
+        <label>Name:</label> <input type="text" id="edit_name"><br>
+        <label>Unit:</label> <input type="text" id="edit_unit" placeholder="e.g. box, pieces, wholesale"><br>
+        <label>Pieces/Quantity:</label><input type="number" id="edit_quantity"><br>
+        <label>Amount(capital):</label><input type="number" id="edit_amount(capital)"><br>
+        <label>Price:</label><input type="number" id="edit_amount" step="0.01"><br>
+        <label>Sales:</label><input type="number" id="edit_sales"><br>
+        <label>Expenses:</label><input type="number" id="edit_expenses"><br>
+        <button id="save_add" class="btn-edit">Save Changes</button>
+        <button class="btn-back"><a href="index.html">Back</a></button>
+    </div>
+    <script src="main.js"></script>
+    <script src="edit_product.js"></script>
+</body>
+</html>
+
+

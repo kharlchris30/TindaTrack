@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Sari-Sari Inventory</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+        /* Logo container styles */
+        .logo-title-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: flex-start;
+            padding-bottom: 20px;
+        }
+        .logo-title-container .logo {
+            max-width: 120px;
+            height: auto;
+            margin: 0;
+        }
+        .logo-title-container .title-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0;
+        }
+        .logo-title-container .title-text h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            line-height: 1.1;
+            border-bottom: none !important; /* remove underline */
+        }
+        .logo-title-container .title-text .tinda {
+            color: #ffffff; /* white */
+        }
+        .logo-title-container .title-text .track {
+            color: #28a745; /* green */
+        }
+        .logo-title-container .title-text .slogan {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-top: 2px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="login-container">
+        <!-- Logo and Title -->
+        <div class="logo-title-container">
+            <img src="tindatrack-logo.png" alt="TindaTrack Logo" class="logo">
+            <div class="title-text">
+                <h1><span class="tinda">Tinda</span><span class="track">Track</span></h1>
+                <p class="slogan">Tinda mo, Track mo!</p>
+            </div>
+        </div>
+
+        <h2>Admin Login</h2>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <button type="submit" class="btn-login">Login</button>
+        </form>
+
+        <!-- Change Password Button -->
+        <div style="margin-top: 20px;">
+            <a href="change_password.html" class="btn-edit">Change Password</a>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>
+
+
+
+

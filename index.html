@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="auth.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sari-Sari Store Inventory Management</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Logo and title styling */
+        .logo-title-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: flex-start;
+            padding-bottom: 20px;
+        }
+        .logo-title-container .logo {
+            max-width: 120px;
+            height: auto;
+            margin: 0;
+        }
+        .logo-title-container .title-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0;
+        }
+        .logo-title-container .title-text h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            line-height: 1.1;
+            border-bottom: none !important;
+        }
+        .logo-title-container .title-text .tinda {
+            color: #ffffff;
+        }
+        .logo-title-container .title-text .track {
+            color: #28a745;
+        }
+        .logo-title-container .title-text .slogan {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-top: 2px;
+            font-style: italic;
+        }
+
+        /* Fixed Logout Button at bottom right */
+        .btn-logout {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: #dc3545; /* Red */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .btn-logout:hover {
+            background-color: #b52a32;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo and Title -->
+        <div class="logo-title-container">
+            <img src="tindatrack-logo.png" alt="TindaTrack Logo" class="logo">
+            <div class="title-text">
+                <h1><span class="tinda">Tinda</span><span class="track">Track</span></h1>
+                <p class="slogan">Tinda mo, Track mo!</p>
+            </div>
+        </div>
+
+        <!-- Logout button fixed at bottom right -->
+        <button onclick="logout()" class="btn-logout">Logout</button>
+
+
+        <div class="menu">
+            <h2>Menu</h2>
+            <div class="button-group">
+                <button class="menu-button btn-add"><a href="add_product.html">Add</a></button>
+                <button class="menu-button btn-edit"><a href="edit_product.html">Edit</a></button>
+                <button class="menu-button btn-inventory"><a href="list_product.html">View Inventory</a></button>
+                <button class="menu-button btn-delete"><a href="delete_product.html">Delete</a></button>
+            </div>
+        </div>
+
+        <div class="summary">
+            <h2>Inventory Summary</h2>
+            <div id="summary-stats">
+                <p>Total Products: <span id="total-products">0</span></p>
+                <p>Total Sales: ₱<span id="total-sales">0.00</span></p>
+                <p>Total Income: ₱<span id="total-income">0.00</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            inventory.loadFromLocalStorage();
+            const products = inventory.getAllProducts();
+
+            // Update summary stats
+            document.getElementById('total-products').textContent = products.length;
+
+            const totalSales = products.reduce((sum, product) => sum + product.totalSales, 0);
+            document.getElementById('total-sales').textContent = totalSales.toFixed(2);
+
+            const totalIncome = products.reduce((sum, product) => sum + product.income, 0);
+            document.getElementById('total-income').textContent = totalIncome.toFixed(2);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
